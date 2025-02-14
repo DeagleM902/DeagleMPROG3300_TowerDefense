@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8jd31lif2w5i"
+path="res://.godot/imported/Chiptune Vol5 End Era Main.wav-55b541bf31e7ce54a2f3d5c36f7faa5a.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Chiptune Vol5 End Era Main.wav"
+dest_files=["res://.godot/imported/Chiptune Vol5 End Era Main.wav-55b541bf31e7ce54a2f3d5c36f7faa5a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
