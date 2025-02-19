@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dljc6rkfxt137"]
+
+[ext_resource type="Texture2D" uid="uid://8msx38djts4o" path="res://Images/Simple Tower Defense/Towers/Non-Combat Towers/spr_normal_tower_01_blue.png" id="1_li026"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1ct4"]
+size = Vector2(16, 16)
+
+[node name="Tower" type="CharacterBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_li026")
+offset = Vector2(11, -14)
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_g1ct4")
