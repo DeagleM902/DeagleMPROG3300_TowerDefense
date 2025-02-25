@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf4mos3ud03pf"]
+
+[ext_resource type="PackedScene" uid="uid://csgo2goiqskkt" path="res://Scenes/enemy.tscn" id="1_py6xy"]
+
+[sub_resource type="Curve2D" id="Curve2D_ndq28"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 194, 0, 0, 0, 0, 130, 194, 0, 0, 0, 0, 130, 100, 0, 0, 0, 0, 226, 100, 0, 0, 0, 0, 226, 260, 0, 0, 0, 0, 84, 260, 0, 0, 0, 0, 84, 325, 0, 0, 0, 0, 388, 325, 0, 0, 0, 0, 388, 195, 0, 0, 0, 0, 275, 195, 0, 0, 0, 0, 275, 35, 0, 0, 0, 0, 483, 35, 0, 0, 0, 0, 483, 195, 0, 0, 0, 0, 610, 195)
+}
+point_count = 14
+
+[node name="Stage1" type="Path2D"]
+curve = SubResource("Curve2D_ndq28")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, 194)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="PathFollow2D" instance=ExtResource("1_py6xy")]
