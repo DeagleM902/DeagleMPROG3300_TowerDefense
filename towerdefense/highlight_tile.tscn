@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cit2k4pebiuc2"]
+
+[ext_resource type="Script" path="res://highlight_tile.gd" id="1_iduw2"]
+
+[sub_resource type="Gradient" id="Gradient_lu14b"]
+offsets = PackedFloat32Array(0.844156, 0.850649)
+colors = PackedColorArray(1, 1, 1, 0, 0.753984, 0.753984, 0.753984, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wx817"]
+gradient = SubResource("Gradient_lu14b")
+width = 16
+height = 16
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[node name="HighlightTile" type="Node2D"]
+script = ExtResource("1_iduw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = SubResource("GradientTexture2D_wx817")
+centered = false
