@@ -29,7 +29,5 @@ func place_tower(cell_position : Vector2i, tower_packed_scene : PackedScene) -> 
 func check_valid_tower_placement(cell_position : Vector2i) -> bool:
 		if used_tiles.has(cell_position):
 			return false
-		
 		var cell_data = level.get_cell_tile_data(cell_position).get_custom_data(IS_BUILDABLE)
-		
 		return cell_data

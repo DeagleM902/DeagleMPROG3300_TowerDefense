@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SingleShot" load_steps=3 format=3 uid="uid://rb6yh0078x51"]
+
+[ext_resource type="PackedScene" uid="uid://bx5hsveao0b0i" path="res://Scenes/projectile.tscn" id="1_oqpnq"]
+[ext_resource type="Script" path="res://Scripts/SingleShot.gd" id="2_hnp7t"]
+
+[resource]
+script = ExtResource("2_hnp7t")
+damage = 1.0
+cooldown = 1.0
+speed = 175.0
+projectile_node = ExtResource("1_oqpnq")

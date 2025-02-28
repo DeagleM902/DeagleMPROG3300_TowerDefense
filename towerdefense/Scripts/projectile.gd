@@ -8,13 +8,9 @@ var source
 func _physics_process(delta):
 	position += direction * speed * delta
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	if body.has_method("take_damage"):
-		if "might" in source:
-			body.take_damage(damage * source.might)
-		else:
-			body.take_damage(damage)
-		body.knockback += direction * 100
+		body.take_damage(damage)
 
 
 func _on_screen_exited() -> void:

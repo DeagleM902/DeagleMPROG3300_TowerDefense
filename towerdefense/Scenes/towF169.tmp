@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dljc6rkfxt137"]
+[gd_scene load_steps=5 format=3 uid="uid://dljc6rkfxt137"]
 
 [ext_resource type="Texture2D" uid="uid://b6obkfyrd5rpp" path="res://Images/Simple Tower Defense/Towers/Combat Towers/spr_tower_archer.png" id="1_j3i62"]
 [ext_resource type="Script" path="res://Scripts/tower.gd" id="1_rjnik"]
-[ext_resource type="Resource" uid="uid://rb6yh0078x51" path="res://Resources/Arrow.tres" id="2_opk7k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq8k0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1ct4"]
 size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mcq3f"]
@@ -12,9 +11,7 @@ radius = 45.0
 
 [node name="Tower" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_mask = 0
 script = ExtResource("1_rjnik")
-weapon = ExtResource("2_opk7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -22,12 +19,12 @@ texture = ExtResource("1_j3i62")
 centered = false
 offset = Vector2(0, -7)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(8, 0)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_wq8k0")
+shape = SubResource("RectangleShape2D_g1ct4")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(8, 8)
 
 [node name="Range" type="Area2D" parent="."]
 position = Vector2(8, 8)
@@ -35,9 +32,5 @@ position = Vector2(8, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_mcq3f")
 
-[node name="Cooldown" type="Timer" parent="."]
-autostart = true
-
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
-[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy36imgp4ikau"]
+
+[ext_resource type="Script" path="res://Scripts/pathfinding_manager.gd" id="1_0a3br"]
+
+[node name="PathfindingManager" type="Node"]
+script = ExtResource("1_0a3br")
