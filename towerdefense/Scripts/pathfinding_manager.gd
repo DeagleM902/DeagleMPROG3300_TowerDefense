@@ -25,13 +25,13 @@ func update_terrain_movement_values() -> void:
 			astar_grid.set_point_solid(i, true)
 
 func get_valid_path(start_position : Vector2i, end_position : Vector2i) -> Array[Vector2i]:
-	path_array.clear()
+	var new_path : Array[Vector2i] = []
 	for point in astar_grid.get_point_path(start_position, end_position):
 		var current_point : Vector2i = point
 		current_point += astar_grid.cell_size / 2 as Vector2i
 		
-		path_array.append(current_point)
-	return path_array
-
+		new_path.append(current_point)
+	return new_path
+	
 func get_cell_movement_cost(cell_position : Vector2i) -> int:
 	return tile_map_grid.get_cell_tile_data(cell_position).get_custom_data_by_layer_id(0)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed : float = 50
 @export var target_pos : Marker2D = null
 @export var pathfinding_manager : PathfindingManager = null
+@export var damage : float = 1
 
 @export var health : float = 3:
 	set(value):
