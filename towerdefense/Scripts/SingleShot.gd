@@ -7,12 +7,12 @@ func shoot(source, target, scene_tree):
 	
 	var projectile = projectile_node.instantiate()
 	
-	projectile.position = source.position
+	projectile.position = source.global_position
 	projectile.damage = damage
 	projectile.speed = speed
 	projectile.source = source
-	projectile.direction = (target.position - source.position).normalized()
-
+	projectile.direction = (target.global_position - projectile.position).normalized()
+	projectile.rotation = projectile.direction.angle()
 	
 	scene_tree.current_scene.add_child(projectile)
 	

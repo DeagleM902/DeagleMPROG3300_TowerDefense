@@ -29,18 +29,15 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tdube")
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 2.5)
 shape = SubResource("RectangleShape2D_74r6a")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(4.5, 2.5)
 scale = Vector2(0.45, 0.25)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(2, 3)
+position = Vector2(-2, 0)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_nxbsv")
 lifetime = 0.2

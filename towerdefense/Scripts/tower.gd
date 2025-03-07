@@ -2,6 +2,8 @@ extends CharacterBody2D
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float
 @onready var cooldown_timer: Timer = $Cooldown
+@onready var marker: Marker2D = $Marker2D
+
 
 var enemyArray : Array [CharacterBody2D] = []
 
@@ -10,7 +12,6 @@ var enemyArray : Array [CharacterBody2D] = []
 func _ready() -> void:
 	if weapon:
 		cooldown_timer.wait_time = weapon.cooldown
-		print_debug("Cooldown found")
 		
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy):
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 func _on_cooldown_timeout() -> void:
 	var target = get_target()
 	if target:
-		weapon.activate(self, target, target.get_tree())
+		weapon.activate(marker, target, target.get_tree())
 func get_target():
 	if enemyArray.size() > 0:
 		return enemyArray[0]

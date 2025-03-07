@@ -51,4 +51,3 @@ func get_path_to_position() -> void:
 
 func take_damage(amount):
 	health -= amount
-	print_debug(health)
