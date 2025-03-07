@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://csgo2goiqskkt"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_5qbj6"]
-[ext_resource type="Texture2D" uid="uid://b25p8tmbbnmuw" path="res://Images/Simple Tower Defense/Enemies/spr_goblin.png" id="1_kwgp4"]
+[ext_resource type="Texture2D" uid="uid://clvgahpfukbe6" path="res://Images/Simple Tower Defense/Enemies/goblin.png" id="2_or5wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02njr"]
 size = Vector2(11, 8)
@@ -11,8 +11,7 @@ collision_mask = 0
 script = ExtResource("1_5qbj6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kwgp4")
-region_enabled = true
+texture = ExtResource("2_or5wt")
 region_rect = Rect2(11, 0, 11, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

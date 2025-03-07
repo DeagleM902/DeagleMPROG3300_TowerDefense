@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed : float = 50
-@export var target_pos : Marker2D = null
-@export var pathfinding_manager : PathfindingManager = null
+var target_pos : Marker2D = null
+var pathfinding_manager : PathfindingManager = null
 @export var damage : float = 1
 
 @export var health : float = 3:
@@ -27,6 +27,7 @@ var type : Enemy:
 		health = value.health
 
 func _ready() -> void:
+	add_to_group("Enemies")
 	path_array = pathfinding_manager.get_valid_path(global_position / 16, target_pos.position / 16)
 	
 func _process(delta):	

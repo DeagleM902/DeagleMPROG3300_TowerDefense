@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://c71krp2n40t0d"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyType.gd" id="1_e5k43"]
+[ext_resource type="Texture2D" uid="uid://byto8ovewfle7" path="res://Images/Simple Tower Defense/Enemies/bat.png" id="2_tl77x"]
+
+[resource]
+script = ExtResource("1_e5k43")
+title = "Bat"
+texture = ExtResource("2_tl77x")
+health = 2.0
+damage = 1.0
+speed = 100.0
