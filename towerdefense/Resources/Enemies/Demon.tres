@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://dbqsgjr75v88r"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyType.gd" id="1_1c3i2"]
+[ext_resource type="Texture2D" uid="uid://dxuw72l2n7xpf" path="res://Images/Simple Tower Defense/Enemies/demon.png" id="2_l6l5c"]
+
+[resource]
+script = ExtResource("1_1c3i2")
+title = "Demon"
+texture = ExtResource("2_l6l5c")
+health = 5.0
+damage = 2.0
+speed = 55.0
+coins = 2

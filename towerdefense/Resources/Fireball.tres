@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FireballWeapon" load_steps=3 format=3 uid="uid://4nsv80rg85q5"]
+
+[ext_resource type="PackedScene" uid="uid://b1hfc20m63jm0" path="res://Scenes/fireball.tscn" id="1_ntrhq"]
+[ext_resource type="Script" path="res://Scripts/FireballWeapon.gd" id="2_84b0r"]
+
+[resource]
+script = ExtResource("2_84b0r")
+damage = 1.0
+cooldown = 1.0
+speed = 200.0
+projectile_node = ExtResource("1_ntrhq")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=4 format=3 uid="uid://bqlvpsg65d23j"]
+
+[ext_resource type="Script" path="res://Scripts/TowerType.gd" id="1_gbayw"]
+[ext_resource type="Texture2D" uid="uid://bonpeaq4hcres" path="res://Images/Simple Tower Defense/Towers/Combat Towers/spr_tower_lightning_wizard.png" id="2_b27mx"]
+[ext_resource type="Resource" uid="uid://6mq0vkvfxicx" path="res://Resources/Lightning.tres" id="3_bhfua"]
+
+[resource]
+script = ExtResource("1_gbayw")
+title = "LightningTower"
+texture = ExtResource("2_b27mx")
+weapon = ExtResource("3_bhfua")
+cost = 20

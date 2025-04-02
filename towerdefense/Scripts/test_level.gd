@@ -5,6 +5,8 @@ class_name TestLevel
 @export var building_manager : BuildingManager = null
 @onready var level: TileMapLayer = $Map/Level
 
+func _ready():
+	SoundManager.play_music(preload("res://Audio/Music/SynFantasy Vol3 Forest Tavern Intensity 2.wav"))
 
 #Tower placement on grid with mouse click
 func _unhandled_input(event: InputEvent) -> void:

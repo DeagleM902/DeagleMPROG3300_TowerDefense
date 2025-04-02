@@ -4,21 +4,32 @@ extends Node
 @export var spawn_marker: Marker2D
 @export var target_pos : Marker2D = null
 @export var pathfinding_manager : PathfindingManager = null
+const goblin = preload("res://Resources/Enemies/Goblin.tres")
+const bat = preload("res://Resources/Enemies/Bat.tres")
+const slime = preload("res://Resources/Enemies/Slime.tres")
+const demon = preload("res://Resources/Enemies/Demon.tres")
+const ghost = preload("res://Resources/Enemies/Ghost.tres")
+const kingslime = preload("res://Resources/Enemies/KingSlime.tres")
 
 # Array of wave data.
 # "enemy": Enemy resource (defines stats, texture, etc.)
 # "count": Number of enemies to spawn in this wave.
 # "spawn_interval": Time (in seconds) between spawns.
 @export var waves: Array[Dictionary] = [
-	{"enemy": preload("res://Resources/Enemies/Goblin.tres"), "count": 5, "spawn_interval": 1.0},
-	{"enemy": preload("res://Resources/Enemies/Bat.tres"), "count": 3, "spawn_interval": 2.0}
+	{"enemy": goblin, "count": 10, "spawn_interval": 1.2},
+	{"enemy": bat, "count": 10, "spawn_interval": 1},
+	{"enemy": slime, "count": 15, "spawn_interval": 0.75},
+	{"enemy": goblin, "count": 20, "spawn_interval": 0.5},
+	{"enemy": demon, "count": 10, "spawn_interval": 0.8},
+	{"enemy": ghost, "count": 15, "spawn_interval": 0.6},
+	{"enemy": kingslime, "count": 5, "spawn_interval": 1}
 ]
 var current_wave: int = 0
 var enemy_spawned_count: int = 0
 var spawning_wave: bool = false
 
 func _ready() -> void:
-	# Optionally, delay the start of the first wave or let the GameManager trigger it.
+	await get_tree().create_timer(1.0).timeout
 	start_wave()
 
 func start_wave() -> void:

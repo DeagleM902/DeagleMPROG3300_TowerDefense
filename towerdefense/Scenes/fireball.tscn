@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1hfc20m63jm0"]
+
+[ext_resource type="Texture2D" uid="uid://dfslvvfjxqx8g" path="res://Images/Simple Tower Defense/Towers/Combat Towers Projectiles/spr_fire_ball.png" id="1_ay5iw"]
+[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_u44lt"]
+[ext_resource type="PackedScene" uid="uid://3qk74m254udh" path="res://Scenes/explosion_effect.tscn" id="3_d12gb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ty2vp"]
+radius = 5.0
+
+[sub_resource type="Gradient" id="Gradient_vvoan"]
+offsets = PackedFloat32Array(0, 0.204918, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.952941, 1, 1, 1, 0.941176, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xogb4"]
+gradient = SubResource("Gradient_vvoan")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_17j6y"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+initial_velocity_min = -5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_xogb4")
+turbulence_enabled = true
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_u44lt")
+explosion_scene = ExtResource("3_d12gb")
+metadata/_edit_group_ = true
+
+[node name="FirstHit" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ty2vp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ay5iw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.38419e-07, 5.96046e-08)
+scale = Vector2(0.4, 0.4)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_17j6y")
+lifetime = 0.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

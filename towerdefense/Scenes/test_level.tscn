@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b67kxfdxqior0"]
+[gd_scene load_steps=20 format=4 uid="uid://b67kxfdxqior0"]
 
 [ext_resource type="Texture2D" uid="uid://ctetsub14u77w" path="res://Images/Simple Tower Defense/Environment/Grass/spr_grass_01.png" id="1_1gney"]
 [ext_resource type="Texture2D" uid="uid://dpeiceciqlkui" path="res://Images/Simple Tower Defense/Environment/Grass/spr_grass_02.png" id="1_ayfxg"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cy36imgp4ikau" path="res://Scenes/pathfinding_manager.tscn" id="4_7uaa6"]
 [ext_resource type="PackedScene" uid="uid://dljc6rkfxt137" path="res://Scenes/tower.tscn" id="5_0a33h"]
 [ext_resource type="PackedScene" uid="uid://chcj347ndt3b0" path="res://Scenes/enemy_spawner.tscn" id="5_11cp0"]
+[ext_resource type="PackedScene" uid="uid://bkkg7dfoll2rj" path="res://Scenes/game_manager.tscn" id="6_yajx1"]
+[ext_resource type="PackedScene" uid="uid://c455lu0mgx6c6" path="res://Scenes/gui.tscn" id="8_caelh"]
 [ext_resource type="PackedScene" uid="uid://dfirlnaktt3hn" path="res://Scenes/Base.tscn" id="8_jc7iu"]
-[ext_resource type="PackedScene" uid="uid://cit2k4pebiuc2" path="res://highlight_tile.tscn" id="9_gycux"]
+[ext_resource type="PackedScene" uid="uid://cit2k4pebiuc2" path="res://Scenes/highlight_tile.tscn" id="9_gycux"]
 [ext_resource type="PackedScene" uid="uid://csgo2goiqskkt" path="res://Scenes/enemy.tscn" id="11_c2f5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpgju"]
@@ -115,14 +117,17 @@ building_manager = NodePath("BuildingManager")
 [node name="BuildingManager" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_rh2au")]
 level = NodePath("../Map/Level")
 
-[node name="PathfindingManager" parent="." node_paths=PackedStringArray("tile_map_grid") instance=ExtResource("4_7uaa6")]
-tile_map_grid = NodePath("../Map/Path")
-
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("spawn_marker", "target_pos", "pathfinding_manager") instance=ExtResource("5_11cp0")]
 enemy_scene = ExtResource("11_c2f5u")
 spawn_marker = NodePath("../SpawnPosition")
 target_pos = NodePath("../EndPosition")
 pathfinding_manager = NodePath("../PathfindingManager")
+
+[node name="GameManager" parent="." node_paths=PackedStringArray("GUI") instance=ExtResource("6_yajx1")]
+GUI = NodePath("../GUI")
+
+[node name="PathfindingManager" parent="." node_paths=PackedStringArray("tile_map_grid") instance=ExtResource("4_7uaa6")]
+tile_map_grid = NodePath("../Map/Path")
 
 [node name="Map" type="Node2D" parent="."]
 metadata/_edit_group_ = true
@@ -155,3 +160,8 @@ position = Vector2(-24, 199)
 position = Vector2(320, 180)
 
 [node name="HighlightTile" parent="." instance=ExtResource("9_gycux")]
+
+[node name="GUI" parent="." node_paths=PackedStringArray("building_manager") instance=ExtResource("8_caelh")]
+offset_right = 640.0
+offset_bottom = 360.0
+building_manager = NodePath("../BuildingManager")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://dvy2sw061lnnv"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyType.gd" id="1_3ilbc"]
+[ext_resource type="Texture2D" uid="uid://nh01oav8ocij" path="res://Images/Simple Tower Defense/Enemies/slime.png" id="2_qa62o"]
+
+[resource]
+script = ExtResource("1_3ilbc")
+title = "Slime"
+texture = ExtResource("2_qa62o")
+health = 4.0
+damage = 1.0
+speed = 30.0
+coins = 1

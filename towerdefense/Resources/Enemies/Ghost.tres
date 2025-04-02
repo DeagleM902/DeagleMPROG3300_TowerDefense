@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://cnbvwsbvqtkdy"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyType.gd" id="1_iaycw"]
+[ext_resource type="Texture2D" uid="uid://dtif8cmraxej8" path="res://Images/Simple Tower Defense/Enemies/ghost.png" id="2_3lawl"]
+
+[resource]
+script = ExtResource("1_iaycw")
+title = "Ghost"
+texture = ExtResource("2_3lawl")
+health = 4.0
+damage = 2.0
+speed = 80.0
+coins = 2

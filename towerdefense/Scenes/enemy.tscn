@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clvgahpfukbe6" path="res://Images/Simple Tower Defense/Enemies/goblin.png" id="2_or5wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02njr"]
-size = Vector2(11, 8)
+size = Vector2(12, 10)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 0

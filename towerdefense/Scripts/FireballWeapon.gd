@@ -1,5 +1,5 @@
 extends Weapon
-class_name SingleShot
+class_name FireballWeapon
 
 func shoot(source, target, scene_tree):
 	if target == null:
@@ -17,6 +17,6 @@ func shoot(source, target, scene_tree):
 	scene_tree.current_scene.add_child(projectile)
 	
 func activate(source, target, scene_tree):
-	if scene_tree.paused == true:
+	if scene_tree.paused:
 		return
 	shoot(source, target, scene_tree)

@@ -4,11 +4,13 @@ extends CharacterBody2D
 var target_pos : Marker2D = null
 var pathfinding_manager : PathfindingManager = null
 @export var damage : float = 1
+@export var coins : int = 1
 
 @export var health : float = 3:
 	set(value):
 		health = value
 		if health <= 0:
+			GameManager.add_coins(coins)
 			queue_free()
 
 var path_array : Array[Vector2i] = []

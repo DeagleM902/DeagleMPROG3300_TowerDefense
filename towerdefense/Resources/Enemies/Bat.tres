@@ -10,3 +10,4 @@ texture = ExtResource("2_tl77x")
 health = 2.0
 damage = 1.0
 speed = 100.0
+coins = 1

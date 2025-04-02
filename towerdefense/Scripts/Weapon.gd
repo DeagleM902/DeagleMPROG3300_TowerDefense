@@ -5,6 +5,8 @@ class_name Weapon
 @export var cooldown : float
 @export var speed : float
 
+@export var texture : Texture2D
+
 @export var projectile_node : PackedScene = preload("res://Scenes/projectile.tscn")
 
 #abstract method, override
