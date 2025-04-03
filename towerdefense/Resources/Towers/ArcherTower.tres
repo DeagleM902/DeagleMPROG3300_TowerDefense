@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Tower" load_steps=4 format=3 uid="uid://bcbw6378y36bk"]
+[gd_resource type="Resource" script_class="Tower" load_steps=5 format=3 uid="uid://bcbw6378y36bk"]
 
 [ext_resource type="Script" path="res://Scripts/TowerType.gd" id="1_8yy1v"]
+[ext_resource type="AudioStream" uid="uid://0wm4ugrwwkyd" path="res://Audio/Effects/archer.wav" id="2_44wmx"]
 [ext_resource type="Texture2D" uid="uid://b6obkfyrd5rpp" path="res://Images/Simple Tower Defense/Towers/Combat Towers/spr_tower_archer.png" id="2_q8uex"]
 [ext_resource type="Resource" uid="uid://rb6yh0078x51" path="res://Resources/Arrow.tres" id="3_y812s"]
 
@@ -10,3 +11,4 @@ title = "Archer"
 texture = ExtResource("2_q8uex")
 weapon = ExtResource("3_y812s")
 cost = 10
+shot_sound = ExtResource("2_44wmx")

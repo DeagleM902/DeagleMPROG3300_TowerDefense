@@ -5,3 +5,4 @@ class_name Tower
 @export var texture : Texture2D
 @export var weapon: Weapon
 @export var cost: int
+@export var shot_sound: AudioStream

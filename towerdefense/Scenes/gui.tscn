@@ -60,12 +60,12 @@ icon = ExtResource("2_27em6")
 
 [node name="FireButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "$10"
+text = "$15"
 icon = ExtResource("3_vg78n")
 
 [node name="LightningButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "$10"
+text = "$20"
 icon = ExtResource("4_5aff1")
 
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

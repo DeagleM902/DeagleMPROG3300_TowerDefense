@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Tower" load_steps=4 format=3 uid="uid://bx3k1lk4o48bm"]
+[gd_resource type="Resource" script_class="Tower" load_steps=5 format=3 uid="uid://bx3k1lk4o48bm"]
 
 [ext_resource type="Script" path="res://Scripts/TowerType.gd" id="1_df74d"]
+[ext_resource type="AudioStream" uid="uid://cu7880jdh4kdk" path="res://Audio/Effects/56_Attack_03.wav" id="2_f5gfa"]
 [ext_resource type="Texture2D" uid="uid://ccxwvsxgesyev" path="res://Images/Simple Tower Defense/Towers/Combat Towers/spr_tower_fire_wizard.png" id="2_qxakt"]
 [ext_resource type="Resource" uid="uid://4nsv80rg85q5" path="res://Resources/Fireball.tres" id="3_op6j3"]
 
@@ -10,3 +11,4 @@ title = "FireballTower"
 texture = ExtResource("2_qxakt")
 weapon = ExtResource("3_op6j3")
 cost = 15
+shot_sound = ExtResource("2_f5gfa")

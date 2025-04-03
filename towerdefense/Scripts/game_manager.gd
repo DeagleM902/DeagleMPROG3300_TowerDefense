@@ -1,33 +1,23 @@
 extends Node
 
 signal coins_updated(new_value : int)
+signal end_game(won : bool)
 
 var is_wave_complete : bool = true
-var coins : int = 10:
+var coins : int = 20:
 	set(value):
 		coins = value
 		coins_updated.emit(value)
 
-@export var GUI : Control = null
-
 func game_over():
-	get_tree().reload_current_scene() #should display retry button, other effect
-	#get_tree().paused = true
-	#display retry button
-	#retry button on_pressed(): GameManager.new_game()
+	end_game.emit(false)
 	
 func win_game():
-	#Show congrats ui
-	#Retry / next level / main menu button(s)
-	print_debug("You Win!")
-	await get_tree().create_timer(5.0).timeout
-	print_debug("Restarting Game")
-	new_game()
-	return
+	end_game.emit(true)
 
 func new_game():
 	get_tree().reload_current_scene()
-	adjust_coins(10)
+	adjust_coins(20)
 	get_tree().paused = false
 
 func start_wave():

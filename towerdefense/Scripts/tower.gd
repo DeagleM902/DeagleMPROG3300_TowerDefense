@@ -3,6 +3,8 @@ var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float
 @onready var cooldown_timer: Timer = $Cooldown
 @onready var marker: Marker2D = $Marker2D
+@onready var shot_sound: AudioStreamPlayer = $ShotSound
+
 
 var enemyArray : Array [CharacterBody2D] = []
 var tower_type : Tower
@@ -16,6 +18,8 @@ func _ready() -> void:
 		weapon = tower_type.weapon
 		if weapon:
 			cooldown_timer.wait_time = weapon.cooldown
+		if tower_type.shot_sound:
+					shot_sound.stream = tower_type.shot_sound
 		
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy):
@@ -28,6 +32,7 @@ func _on_cooldown_timeout() -> void:
 	var target = get_target()
 	if target:
 		weapon.activate(marker, target, target.get_tree())
+		shot_sound.play()
 		
 func get_target():
 	if enemyArray.size() > 0:

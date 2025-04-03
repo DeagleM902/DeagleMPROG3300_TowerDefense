@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3qk74m254udh"]
+[gd_scene load_steps=8 format=3 uid="uid://3qk74m254udh"]
 
 [ext_resource type="Texture2D" uid="uid://dstqdc7ok55ue" path="res://Images/misc/explosion_anim_strip_10.png" id="1_o05hd"]
 [ext_resource type="Script" path="res://Scripts/explosion_effect.gd" id="1_xgddr"]
+[ext_resource type="AudioStream" uid="uid://baivj5covlmwu" path="res://Audio/Effects/04_Fire_explosion_04_medium.wav" id="3_2wqvp"]
 
 [sub_resource type="Animation" id="Animation_h2evk"]
 length = 0.001
@@ -59,3 +60,8 @@ libraries = {
 
 [node name="ExplosionRadius" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ftc8q")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2wqvp")
+volume_db = -16.0
+bus = &"SoundEffects"
