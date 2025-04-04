@@ -6,7 +6,6 @@
 
 [resource]
 script = ExtResource("2_me3yj")
-amount = 5
 damage = 2.0
 cooldown = 1.5
 speed = 0.0

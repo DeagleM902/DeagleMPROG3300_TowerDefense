@@ -28,7 +28,7 @@ func shoot(source, scene_tree : SceneTree):
 		scene_tree.current_scene.add_child(projectile)
 	
 	#Timer controls how long the effect is visible
-	await scene_tree.create_timer(0.5).timeout
+	await scene_tree.create_timer(0.25).timeout
 	for i in range(projectiles.size()):
 		var temp = projectiles.pop_front()
 		if is_instance_valid(temp):
